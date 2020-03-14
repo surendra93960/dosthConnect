@@ -1,0 +1,60 @@
+
+<div *ngIf="loading">
+
+    <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+
+</div>
+
+
+<div class="container-fluid">
+      <div class="mx-auto text-center display-4 ">My posts are </div>
+      <div class="row">
+
+          <div class="col-md-4 mt-4
+          
+          " *ngFor="let post of myPosts">
+
+              <div class="card shadow">
+
+                    <img class="card-img-top" src="{{post.download_url}}" />
+
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-block disabled btn-success">{{post.author}}</a>
+                    </div>
+
+
+              </div>
+
+          </div>
+
+
+
+      </div>
+
+
+</div>

@@ -13,11 +13,17 @@ export class HomeComponent implements OnInit {
    }
 
   myPosts : Post;
-
+  loading : boolean =true;
   ngOnInit() {
     this.postService.getPosts().subscribe((data : Post)=>
     {
-          console.log(data.slice(0,10));
+          
+
+          this.myPosts = data.slice(0,20);
+
+          console.log(this.myPosts);
+          this.loading = false;
+          
     })
   }
 
