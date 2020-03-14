@@ -7,18 +7,23 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SigninScreenComponent } from './signin-screen/signin-screen.component';
 import { SignupScreenComponent } from './signup-screen/signup-screen.component';
-
+import { AboutComponent } from './about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PostService } from './post.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes : Routes = [
   { path : '' , component : HomeComponent},
   { path : 'home' , component : HomeComponent},
+  { path : 'about' , component : AboutComponent},
   { path : 'signin' , component : SigninScreenComponent},
   { path : 'signup' , component : SignupScreenComponent},
 ] 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, NavbarComponent, HomeComponent, SigninScreenComponent, SignupScreenComponent,  ],
-  bootstrap:    [ AppComponent ]
+  imports:      [ BrowserModule, FormsModule ,HttpClientModule,RouterModule.forRoot(appRoutes) ,ReactiveFormsModule ],
+  declarations: [ AppComponent, NavbarComponent, HomeComponent, SigninScreenComponent, SignupScreenComponent, AboutComponent,  ],
+  bootstrap:    [ AppComponent ],
+  providers: [PostService]
 })
 export class AppModule { }
