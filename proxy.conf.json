@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://meanapp.surendrareddyre.repl.co/",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

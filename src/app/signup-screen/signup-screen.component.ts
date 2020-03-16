@@ -26,10 +26,8 @@ export class SignupScreenComponent implements OnInit {
   onSubmit(){
       this.new_user = this.userSignupForm.value;
       this.auth.registerUser(this.new_user).subscribe(res =>{
-        console.log('ganesh',res);
-        
-
-      } );
+        console.log('data returned from server is ',res);
+        } );
   }
 
 }

@@ -16,9 +16,12 @@ export class AuthService {
   })
 };
 
-  registerUser(new_user : User) : Observable<HttpResponse<User>> {
+  registerUser(new_user : User) : Observable<HttpResponse<User>> 
+  {
+    
       console.log(new_user);
-      return this._http.post<User>('/api/registerUser',new_user ,this.httpOptions);
+      return this._http.post<User>('https://meanapp.surendrareddyre.repl.co/api/registerUser',new_user ,this.httpOptions);
+
   }
 
 }
