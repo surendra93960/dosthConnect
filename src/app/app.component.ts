@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
-  loggedIn : boolean = true;
+  loggedIn : boolean = false;
 
 }
