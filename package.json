@@ -11,12 +11,12 @@
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
     "core-js": "2",
-    "rxjs": "^6.5.2",
+    "rxjs" : "^6.5.2",
     "zone.js": "^0.9.1"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth.service';
 
 const appRoutes : Routes = [
   { path : '' , component : HomeComponent},
@@ -24,6 +25,6 @@ const appRoutes : Routes = [
   imports:      [ BrowserModule, FormsModule ,HttpClientModule,RouterModule.forRoot(appRoutes) ,ReactiveFormsModule ],
   declarations: [ AppComponent, NavbarComponent, HomeComponent, SigninScreenComponent, SignupScreenComponent, AboutComponent,  ],
   bootstrap:    [ AppComponent ],
-  providers: [PostService]
+  providers: [PostService, AuthService]
 })
 export class AppModule { }
