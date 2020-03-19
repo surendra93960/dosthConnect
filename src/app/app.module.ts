@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 const appRoutes : Routes = [
   { path : '' , component : HomeComponent},
@@ -23,7 +24,7 @@ const appRoutes : Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,HttpClientModule,RouterModule.forRoot(appRoutes) ,ReactiveFormsModule ],
-  declarations: [ AppComponent, NavbarComponent, HomeComponent, SigninScreenComponent, SignupScreenComponent, AboutComponent,  ],
+  declarations: [ AppComponent, NavbarComponent, HomeComponent, SigninScreenComponent, SignupScreenComponent, AboutComponent, LoadingSpinnerComponent,  ],
   bootstrap:    [ AppComponent ],
   providers: [PostService, AuthService]
 })

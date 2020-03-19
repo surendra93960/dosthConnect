@@ -7,6 +7,9 @@ import { User } from './insterfaces/User';
 @Injectable()
 export class AuthService {
 
+
+  isUserSignedIn : false;
+
   constructor(private _http : HttpClient) {
   }
 
@@ -18,10 +21,16 @@ export class AuthService {
 
   registerUser(new_user : User) : Observable<HttpResponse<User>> 
   {
-    
+
       console.log(new_user);
       return this._http.post<User>('https://meanapp.surendrareddyre.repl.co/api/registerUser',new_user ,this.httpOptions);
 
+  }
+
+
+  loginUser(user : User) : Observable<HttpResponse<User>>{
+      console.log('inside auth  ',user)
+      return this._http.post<User>('https://meanapp.surendrareddyre.repl.co/api/loginUser',user,this.httpOptions);
   }
 
 }

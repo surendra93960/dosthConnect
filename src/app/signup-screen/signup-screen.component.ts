@@ -20,7 +20,7 @@ export class SignupScreenComponent implements OnInit {
   })
 
   ngOnInit() {
-
+      
   }
 
   onSubmit(){

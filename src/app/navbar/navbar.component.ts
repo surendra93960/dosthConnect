@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
@@ -7,11 +9,19 @@ import { Input } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() loggedStatus : boolean;
+  //@Input() loggedStatus : boolean;
+  //isUserSignedIn
 
-  constructor() { }
+  isUserSignedIn : boolean;
+  constructor(private auth : AuthService) { }
 
   ngOnInit() {
+    if(this.auth.isUserSignedIn){
+      console.log('inside navbar ',this.auth.isUserSignedIn)
+        this.isUserSignedIn = this.auth.isUserSignedIn;
+    }
+        
+    
   }
 
 }

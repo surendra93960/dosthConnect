@@ -1,3 +1,12 @@
+<!-- <loading-spinner *ngIf="loading"></loading-spinner> -->
+
+<div *ngIf="!errorMessage.success">
+      <div class="alert alert-danger" role="alert">
+       {{ errorMessage.message }}
+      </div>
+</div>
+
+
 <div class="container mt-5 pt-5 mx-auto col-md-4">
 
       <form [formGroup] = "userForm" (ngSubmit)="onSubmit()"> 
@@ -11,9 +20,12 @@
           <input type="password" class="form-control" formControlName="userPassword">
         </div>
         <br>
-        <button type="submit" (click)="updateValues()" class="btn btn-block btn-primary">Submit</button>
+        <button type="submit" (click)="updateValues()" class="btn btn-block btn-primary">
+         <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Submit</button>
         <br>
         Not registered yet? <a routerLink="/signup">register!!</a> Here
       </form>
 
 </div>
+
